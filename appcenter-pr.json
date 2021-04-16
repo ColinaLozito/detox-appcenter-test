@@ -1,0 +1,9 @@
+{
+    "appcenter_apps": [
+        {
+            "branch_template": "master",
+            "owner_name": "Patricks-Fantastic-Org",
+            "app_name": "Detox-Tests"
+        }
+    ]
+}
