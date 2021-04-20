@@ -7,6 +7,9 @@ describe('App', () => {
     await device.launchApp();
     await device.reloadReactNative();
   });
+  afterEach(async () => {
+    await device.terminateApp();
+  });
 
   it('should show the step one message', async () => {
     await expect(element(by.id('stepOne'))).toBeVisible();
