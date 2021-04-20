@@ -1,4 +1,4 @@
-if [ "$APPCENTER_BRANCH" = "dev" ]; then
+if [ "$APPCENTER_BRANCH" = "master" ]; then
 
     export RN_SRC_EXT=e2e.js
 
