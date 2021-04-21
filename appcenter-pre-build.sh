@@ -37,12 +37,9 @@ else
     echo "Install pods "
     cd ios; pod install; cd ..
 
-    DETOX_CONFIG=ios.sim.release
+    echo "iOS: Building the project for Detox tests..."
+    npx detox build --configuration ios.sim.release --loglevel verbose
+
+    echo "iOS: Executing Detox tests..."
+    npx detox test --configuration ios.sim.release --forceExit --cleanup --loglevel verbose
 fi
-
-
-echo "Building the project for Detox tests..."
-npx detox build "$DETOX_CONFIG"
-
-echo "Executing Detox tests..."
-npx detox test "$DETOX_CONFIG" --forceExit 
