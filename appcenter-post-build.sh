@@ -1,4 +1,8 @@
 if [ "$APPCENTER_BRANCH" = "master" ]; then
 
-   echo "TESTING"
+    DETOX_CONFIG=ios.sim.release
+
+    echo "Executing Detox tests..."
+
+    npx detox test --configuration "$DETOX_CONFIG" --forceExit 
 fi

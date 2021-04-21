@@ -28,21 +28,17 @@ then
 
     DETOX_CONFIG=android.emu.release
 else
-    echo "Install AppleSimUtils"
+    echo "Installing AppleSimUtils"
 
     brew tap wix/brew
     brew update
     brew install applesimutils
 
-    echo "Install pods "
+    echo "Installing pods "
     cd ios; pod install; cd ..
 
     DETOX_CONFIG=ios.sim.release
 fi
 
-
 echo "Building the project for Detox tests..."
 npx detox build --configuration "$DETOX_CONFIG"
-
-echo "Executing Detox tests..."
-npx detox test --configuration "$DETOX_CONFIG" --forceExit --cleanup 
