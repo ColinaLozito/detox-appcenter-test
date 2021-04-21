@@ -42,7 +42,7 @@ fi
 
 
 echo "Building the project for Detox tests..."
-npx detox build --configuration "$DETOX_CONFIG"
+npx detox build "$DETOX_CONFIG"
 
 echo "Executing Detox tests..."
-npx detox test --configuration "$DETOX_CONFIG" --forceExit 
+npx detox test "$DETOX_CONFIG" --forceExit 
