@@ -37,7 +37,7 @@ else
     echo "Install pods "
     cd ios; pod install; cd ..
 
-    DETOX_CONFIG=ios.sim.debug
+    DETOX_CONFIG=ios.sim.release
 fi
 
 
