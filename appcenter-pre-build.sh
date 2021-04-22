@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-if [ -z "$OS" ]
+if [ -z "$APP_CENTER_CURRENT_PLATFORM" ]
 then
-    echo "You need define the OS variable in App Center with values android or ios"
+    echo "You need define the APP_CENTER_CURRENT_PLATFORM variable in App Center with values android or ios"
     exit
 fi
 
-if [ "$OS" == "android" ]
+if [ "$APP_CENTER_CURRENT_PLATFORM" == "android" ]
 then
     echo "Setup Android simulator"
     SIMULATOR_IMAGE="system-images;android-28;google_apis;x86"
@@ -37,9 +37,12 @@ else
     echo "Install pods "
     cd ios; pod install; cd ..
 
-    echo "iOS: Building the project for Detox tests..."
-    npx detox build --configuration ios.sim.release --loglevel verbose
-
-    echo "iOS: Executing Detox tests..."
-    npx detox test --configuration ios.sim.release --detectOpenHandles --forceExit --loglevel verbose
+    DETOX_CONFIG=ios.sim.release
 fi
+
+
+echo "Building the project for Detox tests..."
+npx detox build --configuration "$DETOX_CONFIG"
+
+echo "Executing Detox tests..."
+npx detox test --configuration "$DETOX_CONFIG" --detectOpenHandles --forceExit --loglevel verbose
