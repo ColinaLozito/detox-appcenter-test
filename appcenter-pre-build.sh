@@ -43,5 +43,3 @@ fi
 
 echo "Building the project for Detox tests..."
 npx detox build --configuration "$DETOX_CONFIG"
-
-echo "TASK END"
