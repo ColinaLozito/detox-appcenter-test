@@ -41,5 +41,5 @@ else
     npx detox build --configuration ios.sim.release --loglevel verbose
 
     echo "iOS: Executing Detox tests..."
-    npx detox test --configuration ios.sim.release --cleanup --loglevel verbose
+    npx detox test --configuration ios.sim.release --detectOpenHandles --forceExit --loglevel verbose
 fi
