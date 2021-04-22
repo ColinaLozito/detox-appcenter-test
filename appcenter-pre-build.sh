@@ -44,7 +44,4 @@ fi
 echo "Building the project for Detox tests..."
 npx detox build --configuration "$DETOX_CONFIG"
 
-echo "Executing Detox tests..."
-npx detox test --configuration "$DETOX_CONFIG" --detectOpenHandles --forceExit --loglevel verbose
-
 echo "TASK END"
