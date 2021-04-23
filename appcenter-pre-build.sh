@@ -42,4 +42,9 @@ fi
 
 
 echo "Building the project for Detox tests..."
-npx detox build --configuration "$DETOX_CONFIG" --cleanup --loglevel verbose
+npx detox build --configuration "$DETOX_CONFIG" --loglevel verbose
+
+echo "Executing Detox tests..."
+npx detox test --configuration "$DETOX_CONFIG" --detectOpenHandles --forceExit --cleanup --loglevel verbose
+
+echo "TEST ENDED and CLEANUP SUCCEED"
